@@ -1,44 +1,44 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Check, Lightbulb, GraduationCap, Users } from "lucide-react";
+import { Check } from "lucide-react";
 
 const Pricing = () => {
   const plans = [
     {
-      icon: Lightbulb,
-      title: "Contenu Intelligent",
-      description: "Chaque module est généré par des algorithmes d'IA avancés, garantissant un contenu toujours à jour et personnalisé selon votre niveau.",
+      title: "Essentiel",
+      price: "5€",
+      description: "Idéal pour débuter",
       features: [
-        "Adaptation en temps réel",
-        "Contenu personnalisé",
-        "Mise à jour automatique"
+        "3 modules fondamentaux",
+        "Support email",
+        "Accès 6 mois"
       ],
       highlight: false
     },
     {
-      icon: GraduationCap,
-      title: "Modules Complets",
-      description: "6 modules progressifs couvrant tous les aspects de l'IA, des bases théoriques aux applications pratiques dans le monde professionnel.",
+      title: "Avancé",
+      price: "10€",
+      description: "Le plus populaire",
       features: [
-        "6 modules progressifs",
-        "Exercices pratiques",
-        "Quiz interactifs",
-        "Projets concrets"
+        "6 modules complets",
+        "Support IA 24/7",
+        "Certificat inclus",
+        "Accès à vie"
       ],
-      price: "5€",
-      priceLabel: "Accès à vie",
       highlight: true,
       popular: true
     },
     {
-      icon: Users,
-      title: "Support IA 24/7",
-      description: "Un chatbot intelligent alimenté par l'IA vous accompagne tout au long de votre apprentissage pour répondre à vos questions.",
+      title: "Expert",
+      price: "15€",
+      description: "Formation complète",
       features: [
-        "Assistance instantanée",
-        "Réponses personnalisées",
-        "Disponible 24h/24"
+        "10 modules avancés",
+        "Coaching personnalisé",
+        "Projets pratiques",
+        "Accès à vie",
+        "Communauté privée"
       ],
       highlight: false
     }
@@ -75,25 +75,21 @@ const Pricing = () => {
               )}
               
               <CardContent className="p-8 text-center">
-                {/* Icon */}
+                {/* Price */}
                 <div className="mb-6">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-primary mx-auto flex items-center justify-center">
-                    <plan.icon className="h-8 w-8 text-primary-foreground" />
+                  <div className="text-5xl font-bold text-primary mb-2">
+                    {plan.price}
                   </div>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">
+                    {plan.title}
+                  </h3>
+                  <p className="text-muted-foreground">
+                    {plan.description}
+                  </p>
                 </div>
 
-                {/* Title */}
-                <h3 className="text-xl font-semibold text-foreground mb-4">
-                  {plan.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  {plan.description}
-                </p>
-
                 {/* Features */}
-                <div className="space-y-3 mb-6">
+                <div className="space-y-3 mb-8">
                   {plan.features.map((feature) => (
                     <div key={feature} className="flex items-center gap-3">
                       <Check className="h-5 w-5 text-green-500 flex-shrink-0" />
@@ -102,32 +98,31 @@ const Pricing = () => {
                   ))}
                 </div>
 
-                {/* Price */}
-                {plan.price && (
-                  <div className="mb-6">
-                    <div className="text-4xl font-bold text-primary mb-2">
-                      {plan.price}
-                    </div>
-                    <div className="text-sm text-muted-foreground">
-                      {plan.priceLabel}
-                    </div>
-                  </div>
-                )}
+                {/* CTA Button */}
+                <Button 
+                  size="lg" 
+                  className={`w-full ${plan.highlight ? 'bg-gradient-primary text-primary-foreground' : 'bg-secondary text-secondary-foreground'} shadow-soft hover:shadow-medium transition-all`}
+                >
+                  Choisir {plan.title}
+                </Button>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        {/* CTA Button */}
-        <div className="text-center">
+        {/* Global CTA */}
+        <div className="text-center bg-gradient-primary p-8 rounded-3xl">
+          <h3 className="text-3xl font-bold text-primary-foreground mb-4">
+            Prêt à transformer votre carrière ?
+          </h3>
           <Button 
             size="lg" 
-            className="bg-gradient-primary text-primary-foreground px-12 py-4 text-lg font-semibold shadow-soft hover:shadow-medium transition-all"
+            className="bg-background text-primary px-16 py-4 text-xl font-bold hover:bg-secondary transition-all shadow-strong hover:scale-105"
           >
-            ▶ Commencer maintenant - 5€
+            🚀 Commencer Maintenant
           </Button>
-          <p className="text-sm text-muted-foreground mt-4">
-            ✅ Paiement sécurisé • Accès instantané • Garantie 30 jours
+          <p className="text-primary-foreground/80 mt-4">
+            ✅ Accès immédiat • Garantie 30 jours • Support inclus
           </p>
         </div>
       </div>

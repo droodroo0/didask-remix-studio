@@ -34,71 +34,43 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-16 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl sm:text-5xl font-bold text-foreground">
-            Ce Que Disent Nos Apprenants
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-8">
+            Témoignages
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Plus de 10,000 personnes ont déjà transformé leur
-            compréhension de l'IA
-          </p>
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {testimonials.map((testimonial, index) => (
-            <Card 
-              key={testimonial.name}
-              className="border-border hover:shadow-medium transition-all duration-300 animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <CardContent className="p-8">
-                {/* Stars */}
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-
-                {/* Content */}
-                <blockquote className="text-muted-foreground mb-6 italic leading-relaxed">
-                  "{testimonial.content}"
-                </blockquote>
-
-                {/* Author */}
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center text-primary-foreground font-semibold text-sm">
-                    {testimonial.avatar}
-                  </div>
-                  <div>
-                    <div className="font-semibold text-foreground">{testimonial.name}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.role}</div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {stats.map((stat, index) => (
-            <div 
-              key={stat.label}
-              className="text-center animate-fade-in"
-              style={{ animationDelay: `${(index + 3) * 0.1}s` }}
-            >
-              <div className="text-4xl font-bold text-primary mb-2">
-                {stat.value}
+        {/* Single testimonial spotlight */}
+        <div className="max-w-3xl mx-auto text-center">
+          <Card className="border-primary/20 shadow-medium">
+            <CardContent className="p-8">
+              {/* Stars */}
+              <div className="flex justify-center gap-1 mb-6">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-6 w-6 fill-yellow-400 text-yellow-400" />
+                ))}
               </div>
-              <div className="text-sm text-muted-foreground">
-                {stat.label}
+
+              {/* Content */}
+              <blockquote className="text-xl text-muted-foreground mb-8 italic leading-relaxed">
+                "Formation exceptionnelle ! En 2 semaines, j'ai acquis des compétences IA que je n'aurais jamais imaginé maîtriser. Le contenu personnalisé et le support 24/7 font toute la différence."
+              </blockquote>
+
+              {/* Author */}
+              <div className="flex items-center justify-center gap-4">
+                <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center text-primary-foreground font-bold text-lg">
+                  M
+                </div>
+                <div className="text-left">
+                  <div className="font-bold text-foreground text-lg">Marie Dubois</div>
+                  <div className="text-muted-foreground">Développeuse Web</div>
+                </div>
               </div>
-            </div>
-          ))}
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>

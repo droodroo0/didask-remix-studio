@@ -14,44 +14,27 @@ const FinalCTA = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center space-y-8">
           {/* Header */}
-          <div className="space-y-4">
-            <h2 className="text-4xl sm:text-5xl font-bold text-primary-foreground">
-              Prêt à Maîtriser l'Intelligence Artificielle ?
+          <div className="space-y-6">
+            <h2 className="text-5xl sm:text-6xl font-bold text-primary-foreground">
+              Commencez Aujourd'hui
             </h2>
-            <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
-              Rejoignez les milliers d'apprenants qui ont déjà transformé leur compréhension de l'IA
-            </p>
-          </div>
-
-          {/* Guarantees Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
-            {guarantees.map((guarantee, index) => (
-              <div 
-                key={guarantee}
-                className="flex items-center gap-3 text-primary-foreground/90 animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
-                  <Check className="h-4 w-4 text-white" />
-                </div>
-                <span className="text-left">{guarantee}</span>
-              </div>
-            ))}
-          </div>
-
-          {/* CTA Button */}
-          <div className="space-y-4">
+            
+            {/* CTA Button */}
             <Button 
               size="lg" 
-              className="bg-background text-primary px-12 py-4 text-lg font-semibold hover:bg-secondary transition-all shadow-strong hover:scale-105"
+              className="bg-background text-primary px-20 py-8 text-3xl font-bold hover:bg-secondary transition-all shadow-strong hover:scale-105"
             >
-              ⚡ Commencer Ma Formation - 5€
+              🚀 JE COMMENCE MAINTENANT
             </Button>
+            
+            <p className="text-2xl text-primary-foreground/90 font-semibold">
+              À partir de 5€ seulement
+            </p>
             
             {/* Final Guarantee */}
             <div className="flex items-center justify-center gap-2 text-primary-foreground/80">
-              <Shield className="h-5 w-5" />
-              <span className="text-sm">Garantie 30 jours satisfait ou remboursé</span>
+              <Shield className="h-6 w-6" />
+              <span className="text-lg">Garantie 30 jours satisfait ou remboursé</span>
             </div>
           </div>
         </div>
